@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Product Catalog</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body{font-family:system-ui;padding:1rem}
+    table{width:100%;border-collapse:collapse}
+    th,td{border:1px solid #ccc;padding:.6rem;vertical-align:top}
+    img{max-width:120px;height:auto;display:block}
+    .out{color:#a00}
+  </style>
+</head>
+<body>
+  <h1>Product Catalog</h1>
+  <table>
+    <caption>Available Products — Electronics</caption>
+    <thead>
+      <tr><th>Product</th><th>Description</th><th>Price (INR)</th><th>Availability</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="1">
+          <strong>Wireless Headphones</strong><br>
+          <img src="https://via.placeholder.com/120x80" alt="Wireless Headphones">
+        </td>
+        <td>Bluetooth 5.2, noise-cancelling, 30h battery life.</td>
+        <td>2,499</td>
+        <td>In stock</td>
+      </tr>
+      <tr>
+        <td>
+          <strong>Smart Watch</strong><br>
+          <img src="https://via.placeholder.com/120x80" alt="Smart Watch">
+        </td>
+        <td>Heart-rate monitor, step tracking, water resistant.</td>
+        <td>3,999</td>
+        <td>Limited stock</td>
+      </tr>
+      <tr>
+        <td colspan="2"><strong>Bundle Offer</strong>: Headphones + Watch</td>
+        <td>5,999</td>
+        <td class="out">Out of stock</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
