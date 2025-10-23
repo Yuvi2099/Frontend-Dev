@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS-Only Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 40px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.4s ease;
+            display: block;
+        }
+        
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center; color:#333; margin-bottom:30px;">CSS-Only Responsive Photo Gallery</h1>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1015/400/300" alt="Mountain">
+            <div class="caption">Mountain View</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1025/400/300" alt="Dog">
+            <div class="caption">Happy Dog</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1035/400/300" alt="Forest">
+            <div class="caption">Peaceful Forest</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1045/400/300" alt="Ocean">
+            <div class="caption">Ocean Waves</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1055/400/300" alt="Desert">
+            <div class="caption">Golden Desert</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1065/400/300" alt="City">
+            <div class="caption">City Skyline</div>
+        </div>
+    </div>
+</body>
+
+</html>
