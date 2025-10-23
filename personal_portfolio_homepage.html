@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9fafc;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            z-index: 1000;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 2em;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #f7c04a;
+        }
+        
+        main {
+            flex: 1;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 5vh 10%;
+        }
+        
+        main img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #555;
+            margin-bottom: 1.5em;
+        }
+        
+        main p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            background-color: #e8eef5;
+            padding: 1.5em;
+            border-radius: 10px;
+            color: #222;
+        }
+        
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            font-size: 0.9rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Vishal Bhagour</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <img src="data:image/jpeg;base64,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"
+            alt="Profile Picture">
+        <p>
+            Hello! I’m <strong>Vishal Bhagour</strong>, a passionate web developer who loves creating clean and modern websites. I enjoy working with HTML, CSS, and JavaScript to design beautiful and functional user experiences.
+        </p>
+    </main>
+
+    <footer>
+        &copy; 2025 Vishal Bhagour | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>
