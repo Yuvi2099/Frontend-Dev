@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced CSS Selectors Demonstration</title>
+
+<style>
+/* ----------------------------------------
+   RESET AND BASE STYLING
+---------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #0f1724, #0b1b2b);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #7c5cff;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* ----------------------------------------
+   LIST STYLING
+---------------------------------------- */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  background: #111827;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  max-width: 500px;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #2c3b50;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+/* Pseudo-class :hover */
+li:hover {
+  background: rgba(124, 92, 255, 0.15);
+}
+
+/* :nth-child() example */
+li:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Pseudo-elements ::before and ::after */
+li::before {
+  content: "• ";
+  color: #7c5cff;
+  font-weight: bold;
+}
+li::after {
+  content: " ✓";
+  color: #4fd1c5;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+li:hover::after {
+  opacity: 1;
+}
+
+/* ----------------------------------------
+   ATTRIBUTE SELECTORS
+---------------------------------------- */
+
+/* Input with specific attribute [type="text"] */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #444;
+  margin-top: 15px;
+  background: #1f2937;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Pseudo-class :focus */
+input[type="text"]:focus {
+  border-color: #7c5cff;
+}
+
+/* Attribute selector for links starting with "https" */
+a[href^="https"] {
+  color: #4fd1c5;
+  text-decoration: none;
+  font-weight: 600;
+}
+a[href^="https"]:hover {
+  text-decoration: underline;
+}
+
+/* ----------------------------------------
+   COMBINATORS
+---------------------------------------- */
+
+/* Child selector (>) — selects direct child paragraphs of .info-box */
+.info-box > p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+/* Adjacent sibling (+) — styles paragraph immediately after an h3 */
+h3 + p {
+  color: #a7f3d0;
+  font-style: italic;
+}
+
+/* General sibling (~) — styles all paragraphs after h4 */
+h4 ~ p {
+  color: #fda4af;
+}
+
+/* Descendant selector — styles span inside .info-box */
+.info-box span {
+  color: #facc15;
+}
+
+/* ----------------------------------------
+   FOOTER
+---------------------------------------- */
+footer {
+  margin-top: 40px;
+  color: #9ca3af;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  ul {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Advanced CSS Selectors Demo</h1>
+    <p>Demonstrating attribute selectors, pseudo-classes, pseudo-elements, and combinators.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Pseudo-Classes & Pseudo-Elements</h2>
+      <ul>
+        <li>Hover over me!</li>
+        <li>Notice the alternating background colors.</li>
+        <li>Hover to see a checkmark added with ::after.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 style="margin-top:30px;">2. Attribute Selectors</h2>
+      <input type="text" placeholder="Focus here to see border highlight" />
+      <p>Example of <code>[type="text"]</code> selector above.</p>
+      <a href="https://example.com">HTTPS Link Example</a>
+    </section>
+
+    <section class="info-box" style="margin-top:30px;">
+      <h2>3. Combinators Examples</h2>
+
+      <h3>Direct Child Selector (>)</h3>
+      <p>This paragraph is a direct child of .info-box.</p>
+
+      <h3>Adjacent Sibling (+)</h3>
+      <p>This paragraph is immediately after an h3.</p>
+
+      <h4>General Sibling (~)</h4>
+      <p>This paragraph comes after an h4 — styled using ~.</p>
+      <p>All following paragraphs share the same style.</p>
+
+      <p>Inside text with a <span>descendant selector</span> example.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Advanced CSS Selectors — Created by Student
+  </footer>
+</body>
+</html>
