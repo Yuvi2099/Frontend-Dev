@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Grid Dashboard</title>
+<style>
+  :root{
+    --bg:#0b1220; --panel:#0f1724; --accent:#7c5cff; --muted:#9aa4b2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    min-height:100vh;
+    font-family:Inter,system-ui,Arial;
+    background:linear-gradient(180deg,#06111a,var(--bg));
+    color:#fff;padding:28px;
+    display:grid;place-items:start center;
+  }
+
+  /* outer grid: sidebar + main, header spans both */
+  .dashboard{
+    width:100%;max-width:1200px;
+    display:grid;
+    grid-template-columns:260px 1fr; /* uses fr for main area */
+    grid-template-rows:auto 1fr;
+    grid-gap:18px; /* legacy name required by the prompt */
+    gap:18px;
+    align-items:start;
+  }
+
+  header{
+    grid-column:1 / -1; /* spans top across all columns */
+    padding:18px 20px;border-radius:10px;
+    background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  header h1{font-size:1.05rem;letter-spacing:0.4px}
+
+  /* sidebar */
+  nav.sidebar{
+    padding:16px;border-radius:10px;background:var(--panel);
+    border:1px solid rgba(255,255,255,0.03);height:calc(100% - 0px);
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .nav-item{
+    display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;
+    color:var(--muted);text-decoration:none;font-weight:600;
+    transition:transform .18s, background .18s;
+  }
+  .nav-item:hover{transform:translateX(6px);background:rgba(124,92,255,0.06);color:#fff}
+
+  /* main content holds the 4 boxes grid */
+  main{
+    padding:18px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    display:grid;grid-template-columns:repeat(2, 1fr);grid-auto-rows:180px;
+    grid-gap:18px;gap:18px; /* spacing */
+  }
+
+  .card{
+    border-radius:10px;padding:18px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    display:flex;flex-direction:column;justify-content:space-between;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 8px 22px rgba(2,6,23,0.45);
+  }
+  .card:hover{transform:scale(1.03);box-shadow:0 22px 60px rgba(2,6,23,0.6)}
+
+  /* one box spans two columns */
+  .span-2{grid-column: span 2; display:flex;flex-direction:column;justify-content:center;align-items:center}
+
+  /* simple visual styles */
+  .meta{font-weight:700}
+  .small{color:var(--muted);font-size:.95rem}
+
+  /* responsive: collapse to single column on small screens */
+  @media (max-width:900px){
+    .dashboard{grid-template-columns:1fr;grid-template-rows:auto auto 1fr}
+    header{grid-column:1}
+    nav.sidebar{order:0}
+    main{grid-column:1;grid-template-columns:1fr;grid-auto-rows:140px}
+    .span-2{grid-column:auto}
+  }
+</style>
+</head>
+<body>
+  <div class="dashboard" role="application">
+    <header>
+      <h1>Dashboard</h1>
+      <div class="small">Welcome, Yuvraj</div>
+    </header>
+
+    <nav class="sidebar" aria-label="Sidebar navigation">
+      <a class="nav-item" href="#">🏠 Overview</a>
+      <a class="nav-item" href="#">📦 Products</a>
+      <a class="nav-item" href="#">📊 Reports</a>
+      <a class="nav-item" href="#">⚙️ Settings</a>
+      <a class="nav-item" href="#">🔒 Logout</a>
+    </nav>
+
+    <main aria-live="polite">
+      <section class="card span-2">
+        <div class="meta">Sales Summary</div>
+        <div class="small">Key metrics, revenue and trends at a glance</div>
+      </section>
+
+      <section class="card">
+        <div class="meta">Active Users</div>
+        <div class="small">1,248</div>
+      </section>
+
+      <section class="card">
+        <div class="meta">New Orders</div>
+        <div class="small">342</div>
+      </section>
+
+      <section class="card">
+        <div class="meta">Server Status</div>
+        <div class="small">All systems operational</div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
