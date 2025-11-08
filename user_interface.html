@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Interface Components</title>
+
+<style>
+  /* ---------- RESET ---------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------- PAGE BASE ---------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+
+  /* ---------- CARD CONTAINER ---------- */
+  .ui-card {
+    background: #111827;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  /* ---------- SEARCH BAR ---------- */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background: #1f2937;
+    border-radius: 10px;
+    padding: 8px 10px;
+    box-shadow: inset 0 0 5px rgba(255,255,255,0.05);
+  }
+
+  .search-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    padding: 8px;
+  }
+
+  .search-bar button {
+    background: #7c5cff;
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+
+  .search-bar button:hover {
+    background: #9f88ff;
+  }
+
+  /* ---------- BUTTON GROUP ---------- */
+  .btn-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .btn-primary {
+    background: #7c5cff;
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: #9f88ff;
+  }
+  .btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(124,92,255,0.5);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid #7c5cff;
+    color: #7c5cff;
+  }
+  .btn-outline:hover {
+    background: #7c5cff;
+    color: #fff;
+  }
+
+  /* ---------- DROPDOWN ---------- */
+  select {
+    background: #1f2937;
+    border: 2px solid #2e3a51;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 200px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  }
+
+  select:focus {
+    border-color: #7c5cff;
+    outline: none;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 600px) {
+    .ui-card {
+      padding: 20px;
+      gap: 20px;
+    }
+    .search-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .search-bar button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <section class="ui-card">
+    <h1>User Interface Components</h1>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <button>Search</button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+
+    <!-- Dropdown Menu -->
+    <select>
+      <option selected disabled>Choose Option</option>
+      <option>Profile</option>
+      <option>Settings</option>
+      <option>Logout</option>
+    </select>
+  </section>
+
+  <footer>
+    &copy; 2025 UI Components Demo — Created by Student
+  </footer>
+
+</body>
+</html>
