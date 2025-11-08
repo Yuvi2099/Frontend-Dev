@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Model Exploration</title>
+
+<style>
+  /* -------------------------------
+     RESET AND BASE STYLES
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     FLEX CONTAINER FOR DEMOS
+  --------------------------------*/
+  .box-demo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+  /* -------------------------------
+     BOX MODEL LAYERED DEMO
+  --------------------------------*/
+  .box-model {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #111827;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  .box {
+    width: 120px;
+    height: 120px;
+    background: #4fd1c5; /* content */
+    padding: 20px;       /* padding layer */
+    border: 8px solid #facc15; /* border layer */
+    margin: 20px;        /* margin layer */
+    outline: 2px dashed #7c5cff; /* visualize outer margin boundary */
+    position: relative;
+    transition: transform 0.4s ease;
+  }
+
+  .box:hover {
+    transform: scale(1.05);
+  }
+
+  .label {
+    margin-top: 10px;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+  }
+
+  /* -------------------------------
+     DIFFERENCE BETWEEN BOX-SIZING
+  --------------------------------*/
+  .content-box {
+    box-sizing: content-box; /* default */
+  }
+
+  .border-box {
+    box-sizing: border-box; /* includes padding & border inside width */
+  }
+
+  .description {
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  footer {
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 700px) {
+    .box-demo-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Box Model Exploration</h1>
+    <p>Understanding content, padding, border, and margin — and the impact of <code>box-sizing</code>.</p>
+  </header>
+
+  <main class="box-demo-container">
+    <!-- Default content-box -->
+    <section class="box-model">
+      <div class="box content-box"></div>
+      <div class="label">Default: <strong>content-box</strong></div>
+      <p class="description">
+        In <strong>content-box</strong>, width and height only include the content.  
+        Padding and border are added outside, making the box appear larger.
+      </p>
+    </section>
+
+    <!-- Border-box -->
+    <section class="box-model">
+      <div class="box border-box"></div>
+      <div class="label">Modified: <strong>border-box</strong></div>
+      <p class="description">
+        In <strong>border-box</strong>, width and height include content, padding, and border —  
+        keeping the box’s total size consistent and easier to control.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Box Model Demo — Created by Student
+  </footer>
+</body>
+</html>
