@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Showcase Layout</title>
+
+<style>
+  /* ---------- Reset ---------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------- Base Styling ---------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  /* ---------- Grid Layout ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1100px;
+  }
+
+  figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: #111827;
+    transition: transform 0.3s ease;
+  }
+
+  /* ---------- Image Styling ---------- */
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+  }
+
+  /* ---------- Overlay Effect ---------- */
+  figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 12px;
+  }
+
+  figure:hover::after {
+    opacity: 1;
+  }
+
+  figure:hover img {
+    transform: scale(1.1);
+  }
+
+  /* ---------- Captions ---------- */
+  figcaption {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    background: #111827;
+    border-radius: 0 0 12px 12px;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 700px) {
+    .gallery {
+      grid-template-columns: 1fr;
+    }
+    img {
+      height: 250px;
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Image Showcase</h1>
+    <p>Hover over the images to see the zoom and overlay effects.</p>
+  </header>
+
+  <section class="gallery">
+    <figure>
+      <img src="https://picsum.photos/id/1015/400/300" alt="Mountain">
+      <figcaption>Peaceful Mountain</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1025/400/300" alt="Dog Portrait">
+      <figcaption>Loyal Companion</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1035/400/300" alt="Forest Path">
+      <figcaption>Misty Forest Trail</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1045/400/300" alt="Beach Sunset">
+      <figcaption>Golden Sunset</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1055/400/300" alt="Desert">
+      <figcaption>Serene Desert Dunes</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1065/400/300" alt="City Lights">
+      <figcaption>Vibrant City Nights</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    &copy; 2025 Image Showcase — Created by Student
+  </footer>
+</body>
+</html>
