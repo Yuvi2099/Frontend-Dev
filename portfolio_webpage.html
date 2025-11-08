@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yuvraj — Stylish Portfolio</title>
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg1:#0f1724;
+      --bg2:#0b1b2b;
+      --accent:#7c5cff;
+      --glass:rgba(255,255,255,0.06);
+      --muted:rgba(255,255,255,0.75);
+      --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg1),var(--bg2));
+      min-height:100vh;
+      color:whitesmoke;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      padding:32px;
+      gap:24px;
+    }
+
+    /* Header */
+    header{
+      width:100%;
+      max-width:1100px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:12px 18px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      border-radius:14px;
+      box-shadow: var(--card-shadow);
+      border:1px solid rgba(255,255,255,0.03);
+      backdrop-filter: blur(6px);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:48px;height:48px;border-radius:12px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),#4fd1c5);
+      font-weight:700;color:#081124;
+      box-shadow:0 6px 18px rgba(124,92,255,0.2);
+    }
+    .brand h1{font-size:1.05rem;letter-spacing:0.6px}
+    nav ul{
+      display:flex;gap:16px;list-style:none;align-items:center;
+    }
+    nav a{
+      text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:10px;font-weight:600;
+      transition:all .22s ease;
+    }
+    nav a:hover{transform:translateY(-3px);color:white;background:rgba(255,255,255,0.03)}
+
+    /* Main card */
+    .hero{
+      width:100%;
+      max-width:1100px;
+      display:flex;
+      gap:28px;
+      align-items:center;
+      justify-content:space-between;
+      padding:30px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      box-shadow: var(--card-shadow);
+      border:1px solid rgba(255,255,255,0.04);
+      overflow:hidden;
+    }
+
+    .left{
+      flex:1 1 420px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      align-items:flex-start;
+      justify-content:center;
+    }
+    .kicker{
+      text-transform:uppercase;font-weight:700;font-size:0.75rem;
+      letter-spacing:1.8px;color:rgba(255,255,255,0.65);
+      background:linear-gradient(90deg, rgba(124,92,255,0.14), rgba(79,209,197,0.06));
+      padding:6px 10px;border-radius:999px;
+    }
+    .name{
+      font-size:2rem;line-height:1.02;font-weight:800;
+      background: linear-gradient(90deg, #fff, rgba(255,255,255,0.85));
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+    }
+    .desc{
+      color:rgba(255,255,255,0.78);max-width:62ch;font-size:0.98rem;
+    }
+    .cta-row{display:flex;gap:12px;margin-top:6px}
+    .btn{
+      padding:10px 16px;border-radius:12px;border:0;font-weight:700;cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .btn-primary{
+      background:linear-gradient(90deg,var(--accent),#4fd1c5);
+      color:#071028;box-shadow: 0 8px 20px rgba(124,92,255,0.18);
+    }
+    .btn-ghost{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);
+    }
+    .btn:hover{transform:translateY(-4px)}
+    .skills{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;
+    }
+    .pill{
+      padding:8px 10px;background:rgba(255,255,255,0.03);border-radius:999px;font-weight:700;font-size:.85rem;color:var(--muted);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+
+    /* Profile area */
+    .profile{
+      width:320px;min-width:240px;display:flex;align-items:center;justify-content:center;
+      position:relative;padding:18px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .avatar{
+      width:220px;height:340px;border-radius:18px;overflow:hidden;position:relative;
+      box-shadow: 0 18px 40px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.04);
+      transition:transform .4s ease, box-shadow .4s ease;
+    }
+    .avatar img{
+      width:100%;height:100%;object-fit:cover;display:block;
+      transform:scale(1.03) translateY(0);
+      transition:transform .9s cubic-bezier(.2,.9,.2,1);
+    }
+    .avatar::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(180deg, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.35));
+      mix-blend-mode:multiply;
+    }
+    .avatar:hover{transform:translateY(-8px) scale(1.02); box-shadow: 0 30px 80px rgba(2,6,23,0.7)}
+    .avatar:hover img{transform:scale(1.06) translateY(-6px)}
+
+    /* decorative lights */
+    .sparkles{
+      position:absolute;right:18px;top:12px;display:flex;flex-direction:column;gap:8px;
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#4fd1c5);box-shadow:0 8px 20px rgba(124,92,255,0.16)}
+
+    /* Footer */
+    footer{
+      width:100%;max-width:1100px;padding:14px;border-radius:12px;text-align:center;color:rgba(255,255,255,0.6);
+      background:transparent;
+      font-size:0.95rem;
+    }
+
+    /* Responsive stacking under 700px */
+    @media (max-width:700px){
+      header{flex-direction:column;gap:10px;align-items:center}
+      .hero{flex-direction:column-reverse;align-items:center;padding:20px}
+      .profile{width:100%}
+      .avatar{width:60vw;height:60vw;max-width:420px;border-radius:14px}
+      .left{align-items:center;text-align:center}
+      nav ul{flex-wrap:wrap;justify-content:center}
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">Y</div>
+      <div>
+        <h1>Yuvraj</h1>
+        <div style="font-size:0.85rem;color:rgba(255,255,255,0.6)">Frontend & DevOps enthusiast</div>
+      </div>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="hero" role="main" aria-labelledby="intro">
+    <div class="left">
+      <div class="kicker">Hey — nice to meet you</div>
+      <h2 id="intro" class="name">I'm Yuvraj — I build clean, responsive experiences.</h2>
+
+      <p class="desc">
+        I'm a web developer who loves beautiful interfaces and resilient systems.
+        I craft accessible, responsive layouts and bring features to life using modern
+        front-end tools — while also automating and improving deployment workflows.
+      </p>
+
+      <div class="skills" aria-hidden="false">
+        <span class="pill">HTML</span>
+        <span class="pill">CSS (Flex & Grid)</span>
+        <span class="pill">JavaScript</span>
+        <span class="pill">React</span>
+        <span class="pill">Docker</span>
+        <span class="pill">CI / CD</span>
+      </div>
+
+      <div class="cta-row">
+        <button class="btn btn-primary">Download Resume</button>
+        <button class="btn btn-ghost">Contact Me</button>
+      </div>
+    </div>
+
+    <aside class="profile" aria-label="Profile picture">
+      <div class="sparkles" aria-hidden="true">
+        <div class="dot" style="transform:scale(1.1)"></div>
+        <div class="dot" style="transform:scale(.9)"></div>
+      </div>
+
+      <div class="avatar" title="Profile image">
+        <!-- Replace the src if you move the image file. Using the image provided in the session -->
+        <img src="C:\Users\yuvra\Downloads\under_street_lmp.jpg" alt="Yuvraj leaning under a streetlamp">
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    &copy; 2025 Yuvraj — Designed with care. All rights reserved.
+  </footer>
+</body>
+</html>
