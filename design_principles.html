@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Responsive Design Principles Summary</title>
+<style>
+  :root{
+    --bg:#07101a; --panel:#0f1724; --accent1:#7c5cff; --accent2:#4fd1c5;
+    --muted:#bcd1e6; --card-shadow: 0 10px 30px rgba(2,6,23,0.6);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    min-height:100vh;
+    font-family:Inter,system-ui,Arial;
+    background:linear-gradient(180deg,var(--bg),#061424);
+    color:var(--muted);
+    display:flex;align-items:center;justify-content:center;
+    padding:36px;
+  }
+
+  .wrap{width:100%;max-width:1100px}
+  h1{
+    color:whitesmoke;text-align:center;margin-bottom:20px;font-size:1.35rem;
+    letter-spacing:0.2px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    align-items:start;
+  }
+
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;padding:20px;
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow:var(--card-shadow);
+    transition:transform .28s ease, background .28s ease, color .28s ease;
+    display:flex;flex-direction:column;gap:12px;
+    min-height:220px;
+  }
+
+  .card h2{color:#eaf3ff;font-size:1.05rem;margin-bottom:6px}
+  .card p{color:var(--muted);line-height:1.45;font-size:0.95rem}
+  .example{
+    margin-top:auto;
+    background:rgba(255,255,255,0.03);
+    border-radius:8px;padding:12px;font-family:SFMono-Regular,Menlo,monospace;
+    color:#cfe8ff;font-size:0.88rem;overflow:auto;border:1px solid rgba(255,255,255,0.02);
+  }
+
+  /* hover: gradient & text color change */
+  .card:hover{
+    transform:translateY(-8px);
+    background:linear-gradient(135deg,var(--accent1),var(--accent2));
+    color:#051022;
+  }
+  .card:hover p,
+  .card:hover .example,
+  .card:hover h2{color:#051022}
+
+  /* responsive: single-column below 600px */
+  @media (max-width:600px){
+    .grid{grid-template-columns:1fr}
+    body{padding:20px}
+    .card{min-height:unset}
+  }
+
+  /* small polish for code lines */
+  pre{margin:0;font-family:inherit}
+  code{white-space:pre-wrap}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Responsive Design Principles — Quick Summary</h1>
+
+    <section class="grid" aria-label="Responsive principles">
+      <article class="card" aria-labelledby="fluid">
+        <h2 id="fluid">Fluid Layouts</h2>
+        <p>Use relative units (%, vw, fr) so containers resize smoothly instead of using fixed pixel widths.</p>
+        <div class="example" aria-hidden="false">
+<pre><code>/* fluid container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="flexible">
+        <h2 id="flexible">Flexible Media</h2>
+        <p>Make images and media scale within their containers using max-width and object-fit to prevent overflow.</p>
+        <div class="example">
+<pre><code>img, video {
+  max-width:100%;
+  height:auto;
+  display:block;
+  object-fit:cover;
+}</code></pre>
+        </div>
+      </article>
+
+      <article class="card" aria-labelledby="breakpoints">
+        <h2 id="breakpoints">Breakpoints</h2>
+        <p>Use media queries to adjust layout at logical points (content-driven), not just device sizes.</p>
+        <div class="example">
+<pre><code>@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}</code></pre>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
