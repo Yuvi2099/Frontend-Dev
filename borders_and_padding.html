@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Borders and Padding Demonstration</title>
+
+<style>
+  /* -------------------------------
+     RESET AND BASE STYLES
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     FLEX CONTAINER FOR BOXES
+  --------------------------------*/
+  .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* -------------------------------
+     BOX STYLE BASE
+  --------------------------------*/
+  .box {
+    width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #111827;
+    color: #e5e7eb;
+    border-width: 4px;
+    border-color: #7c5cff;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  /* -------------------------------
+     HOVER EFFECT
+  --------------------------------*/
+  .box:hover {
+    border-color: #4fd1c5;
+  }
+
+  /* -------------------------------
+     DIFFERENT BORDER STYLES
+  --------------------------------*/
+  .solid { border-style: solid; padding: 10px; }
+  .dashed { border-style: dashed; padding: 15px; }
+  .double { border-style: double; padding: 20px; }
+  .groove { border-style: groove; padding: 25px; }
+
+  /* -------------------------------
+     ROUNDED CORNERS EXAMPLES
+  --------------------------------*/
+  .rounded-small { border-radius: 10px; }
+  .rounded-large { border-radius: 30px; }
+  .circle { border-radius: 50%; }
+
+  footer {
+    margin-top: 40px;
+    color: #9ca3af;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 700px) {
+    .box-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Borders and Padding Demonstration</h1>
+    <p>This page shows different border styles, corner radii, and padding examples using Flexbox alignment.</p>
+  </header>
+
+  <main>
+    <section class="box-container">
+      <!-- Solid border -->
+      <div class="box solid rounded-small">
+        <p>Solid Border<br>Padding: 10px</p>
+      </div>
+
+      <!-- Dashed border -->
+      <div class="box dashed rounded-large">
+        <p>Dashed Border<br>Padding: 15px</p>
+      </div>
+
+      <!-- Double border -->
+      <div class="box double circle">
+        <p>Double Border<br>Padding: 20px</p>
+      </div>
+
+      <!-- Groove border -->
+      <div class="box groove rounded-small">
+        <p>Groove Border<br>Padding: 25px</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Borders & Padding Demo — Created by Student
+  </footer>
+
+</body>
+</html>
