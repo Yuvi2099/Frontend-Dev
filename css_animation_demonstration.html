@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation Demonstration</title>
+
+<style>
+  /* ---------- RESET ---------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------- BASE PAGE STYLE ---------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 90%;
+    max-width: 1000px;
+  }
+
+  /* ---------- 1. MOVING BOX ---------- */
+  .moving-box {
+    width: 80px;
+    height: 80px;
+    background: #7c5cff;
+    border-radius: 10px;
+    animation: moveBox 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes moveBox {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(150px); background: #9f88ff; }
+    100% { transform: translateX(0); }
+  }
+
+  /* ---------- 2. BOUNCING BALL ---------- */
+  .bouncing-ball {
+    width: 70px;
+    height: 70px;
+    background: #4fd1c5;
+    border-radius: 50%;
+    position: relative;
+    animation: bounce 1.8s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-120px); background: #38b2ac; }
+  }
+
+  /* ---------- 3. COLOR CHANGING TEXT ---------- */
+  .color-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    animation: colorShift 4s ease-in-out infinite alternate;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes colorShift {
+    0% { color: #7c5cff; }
+    25% { color: #4fd1c5; }
+    50% { color: #facc15; }
+    75% { color: #f472b6; }
+    100% { color: #7c5cff; }
+  }
+
+  footer {
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 700px) {
+    main {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>CSS Animation Demonstration</h1>
+    <p>Examples using @keyframes, animation-delay, and animation-direction.</p>
+  </header>
+
+  <main>
+    <!-- 1. Moving Box -->
+    <div class="moving-box"></div>
+
+    <!-- 2. Bouncing Ball -->
+    <div class="bouncing-ball"></div>
+
+    <!-- 3. Color Changing Text -->
+    <div class="color-text">CSS Animations are Fun!</div>
+  </main>
+
+  <footer>
+    &copy; 2025 CSS Animation Demo — Created by Student
+  </footer>
+
+</body>
+</html>
