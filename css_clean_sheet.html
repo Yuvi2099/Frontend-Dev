@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive CSS Cheat Sheet</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(180deg,#0f1724,#0b1b2b);
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    padding:40px 20px;
+  }
+
+  h1{
+    color:#7c5cff;
+    text-align:center;
+    margin-bottom:30px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:20px;
+    width:100%;
+    max-width:1000px;
+  }
+
+  .card{
+    background:#111827;
+    border-radius:12px;
+    padding:25px;
+    transition:transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+    border:1px solid rgba(255,255,255,0.05);
+  }
+
+  .card:hover{
+    transform:translateY(-8px);
+    background:rgba(124,92,255,0.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  }
+
+  .card h2{
+    color:#7c5cff;
+    font-size:1.2rem;
+    margin-bottom:10px;
+  }
+
+  .card p{
+    color:#e5e7eb;
+    font-size:0.95rem;
+    line-height:1.5;
+  }
+
+  /* Responsive - below 700px: stacked layout with key/value style */
+  @media(max-width:700px){
+    .grid{
+      grid-template-columns:1fr;
+    }
+    .card{
+      border-left:4px solid #7c5cff;
+      padding:20px;
+    }
+    .card h2{
+      margin-bottom:6px;
+      font-size:1.1rem;
+    }
+    .card p{
+      font-size:0.95rem;
+      color:#cbd5e1;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1>Responsive CSS Cheat Sheet</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🎨 CSS Filters</h2>
+      <p><code>filter: grayscale(100%)</code> — Adjusts the visual appearance of elements like images.  
+      Common filters: <b>blur()</b>, <b>sepia()</b>, <b>contrast()</b>, <b>brightness()</b>.</p>
+    </div>
+
+    <div class="card">
+      <h2>📱 Media Queries</h2>
+      <p><code>@media (max-width: 768px) { ... }</code> — Changes layout or style for specific screen sizes, 
+      enabling adaptive and responsive design.</p>
+    </div>
+
+    <div class="card">
+      <h2>💡 Responsive Design</h2>
+      <p>Use <b>flex</b>, <b>grid</b>, and relative units like <b>fr</b>, <b>%</b>, <b>vw</b>, and <b>vh</b> 
+      to build layouts that automatically adapt to any device.</p>
+    </div>
+
+    <div class="card">
+      <h2>🔤 Responsive Typography</h2>
+      <p><code>font-size: clamp(1rem, 3vw, 2rem);</code> — Makes text scale smoothly 
+      between a minimum and maximum size for optimal readability.</p>
+    </div>
+
+    <div class="card">
+      <h2>⚙️ Transitions</h2>
+      <p><code>transition: all 0.3s ease;</code> — Smoothly animates changes in color, 
+      size, or position to create polished hover effects.</p>
+    </div>
+
+    <div class="card">
+      <h2>🎯 Grid Layout</h2>
+      <p><code>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</code> — 
+      Automatically fits and adjusts grid columns based on available space.</p>
+    </div>
+  </div>
+</body>
+</html>
