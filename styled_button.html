@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Styled Button Collection</title>
+
+<style>
+  /* ----------- RESET ----------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ----------- PAGE STYLING ----------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  header {
+    margin-bottom: 25px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: #cbd5e1;
+  }
+
+  /* ----------- BUTTON CONTAINER ----------- */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* ----------- BASE BUTTON STYLING ----------- */
+  button {
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    outline: none;
+  }
+
+  button:focus {
+    box-shadow: 0 0 0 3px rgba(124,92,255,0.6);
+  }
+
+  /* ----------- BUTTON VARIANTS ----------- */
+  .primary {
+    background: #7c5cff;
+    color: #fff;
+  }
+  .primary:hover {
+    background: #9f88ff;
+  }
+  .primary:active {
+    background: #5e46d1;
+  }
+
+  .secondary {
+    background: #4fd1c5;
+    color: #0f1724;
+  }
+  .secondary:hover {
+    background: #6fe0d5;
+  }
+  .secondary:active {
+    background: #35b8ad;
+  }
+
+  .outline {
+    background: transparent;
+    border: 2px solid #7c5cff;
+    color: #7c5cff;
+  }
+  .outline:hover {
+    background: #7c5cff;
+    color: #fff;
+  }
+  .outline:active {
+    background: #5e46d1;
+    border-color: #5e46d1;
+  }
+
+  .disabled {
+    background: #374151;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  /* ----------- :disabled STATE ----------- */
+  button:disabled {
+    background: #374151;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #9ca3af;
+  }
+
+  /* ----------- RESPONSIVE ----------- */
+  @media (max-width: 700px) {
+    .button-container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Styled Button Collection</h1>
+    <p>Hover, click, or focus on the buttons to see their interactive states.</p>
+  </header>
+
+  <main>
+    <section class="button-container">
+      <button class="primary">Primary Button</button>
+      <button class="secondary">Secondary Button</button>
+      <button class="outline">Outline Button</button>
+      <button class="disabled" disabled>Disabled Button</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Styled Button Demo — Created by Student
+  </footer>
+</body>
+</html>
