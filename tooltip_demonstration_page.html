@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tooltip Demonstration Page</title>
+
+<style>
+  /* ----------- RESET & BASE STYLES ----------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  /* ----------- TOOLTIP CONTAINER ----------- */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background: #111827;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .tooltip:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ----------- TOOLTIP TEXT ----------- */
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    width: max-content;
+    max-width: 200px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 130%; /* places tooltip above element */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-in-out;
+    font-size: 0.9rem;
+    z-index: 1;
+  }
+
+  /* Small arrow below tooltip */
+  .tooltip .tooltip-text::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0,0,0,0.85) transparent transparent transparent;
+  }
+
+  /* Show tooltip on hover */
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  /* ----------- RESPONSIVE ----------- */
+  @media (max-width: 700px) {
+    main {
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Tooltip Demonstration</h1>
+    <p>Hover over each element below to see tooltips created using only CSS.</p>
+  </header>
+
+  <main>
+    <!-- Tooltip 1 -->
+    <div class="tooltip">
+      💡 Idea
+      <span class="tooltip-text">A bright concept that sparks innovation!</span>
+    </div>
+
+    <!-- Tooltip 2 -->
+    <div class="tooltip">
+      🔧 Tool
+      <span class="tooltip-text">Represents utility and functionality.</span>
+    </div>
+
+    <!-- Tooltip 3 -->
+    <div class="tooltip">
+      🌐 Web
+      <span class="tooltip-text">The global network connecting everyone.</span>
+    </div>
+
+    <!-- Tooltip 4 -->
+    <div class="tooltip">
+      💬 Tip
+      <span class="tooltip-text">Helpful advice or quick trick for learning.</span>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 CSS Tooltip Demo — Created by Student
+  </footer>
+</body>
+</html>
