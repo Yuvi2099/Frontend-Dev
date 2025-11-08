@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Product Gallery — Grid</title>
+<style>
+  :root{
+    --bg:#0f1724; --card:#0b1220; --accent:#7c5cff; --muted:#9aa4b2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:linear-gradient(180deg,var(--bg),#07101a);
+    color:#fff;font-family:Inter,system-ui,Arial;
+    min-height:100vh;padding:36px;display:flex;align-items:flex-start;justify-content:center;
+  }
+
+  .wrap{width:100%;max-width:1200px;}
+  h1{font-size:1.25rem;margin-bottom:18px;letter-spacing:0.2px}
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    align-items:stretch; /* ensures children stretch to same height */
+  }
+
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:12px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between; /* equal height behavior */
+    transition:transform .3s, box-shadow .3s;
+    box-shadow:0 8px 24px rgba(2,6,23,0.55);
+  }
+
+  .card:hover{
+    transform:scale(1.05);
+    box-shadow:0 18px 48px rgba(124,92,255,0.18);
+  }
+
+  .thumb{
+    height:140px;border-radius:8px;background:
+    linear-gradient(135deg,var(--accent),#4fd1c5);
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#061023;
+    margin-bottom:14px;flex-shrink:0;
+  }
+
+  .meta{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .name{font-weight:700;font-size:1rem}
+  .price{background:rgba(255,255,255,0.06);padding:6px 10px;border-radius:8px;font-weight:800;color:#eaf3ff}
+
+  /* make cards visually balanced even when description length varies */
+  .spacer{height:10px;flex:0 0 10px}
+  .desc{color:var(--muted);font-size:.92rem;margin-top:8px;line-height:1.3}
+
+  /* responsive */
+  @media (max-width:900px){
+    .gallery{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:600px){
+    .gallery{grid-template-columns:repeat(1,1fr)}
+    body{padding:20px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Featured Products</h1>
+    <section class="gallery" aria-label="Product gallery">
+      <article class="card">
+        <div>
+          <div class="thumb">P1</div>
+          <div class="name">Aurora Headphones</div>
+          <div class="desc">Crisp sound, comfy fit — perfect for long sessions.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹2,499</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P2</div>
+          <div class="name">Nimbus Backpack</div>
+          <div class="desc">Lightweight, water-resistant with laptop sleeve.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹1,799</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P3</div>
+          <div class="name">Solace Mug</div>
+          <div class="desc">Double-walled ceramic for perfect temperature control.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹599</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P4</div>
+          <div class="name">Lumen Lamp</div>
+          <div class="desc">Adjustable warm-to-cool lighting for focused work.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹2,199</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P5</div>
+          <div class="name">Echo Speaker</div>
+          <div class="desc">Portable, punchy bass, 12h battery life.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹1,299</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P6</div>
+          <div class="name">Atlas Notebook</div>
+          <div class="desc">Hardcover, 200 pages — robust and minimal.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹349</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P7</div>
+          <div class="name">Vega Sunglasses</div>
+          <div class="desc">UV400 protection with a timeless silhouette.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹899</div></div>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="thumb">P8</div>
+          <div class="name">Harbor Bottle</div>
+          <div class="desc">Insulated stainless steel bottle, 750ml capacity.</div>
+        </div>
+        <div class="meta"><div class="spacer"></div><div class="price">₹499</div></div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
