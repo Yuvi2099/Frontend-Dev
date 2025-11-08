@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Image Filter Gallery</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0f1724;
+    color:#fff;
+    padding:30px;
+  }
+
+  h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#7c5cff;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+  }
+
+  figure{
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    background:#111827;
+    box-shadow:0 6px 18px rgba(0,0,0,0.4);
+  }
+
+  img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    transition:filter 0.5s ease, transform 0.5s ease;
+  }
+
+  figcaption{
+    text-align:center;
+    padding:10px;
+    font-size:0.95rem;
+    background:#111827;
+    color:#cbd5e1;
+  }
+
+  /* Different filters for each image */
+  figure:nth-child(1) img{filter:blur(3px);}
+  figure:nth-child(2) img{filter:grayscale(100%);}
+  figure:nth-child(3) img{filter:sepia(100%);}
+  figure:nth-child(4) img{filter:brightness(0.6);}
+  figure:nth-child(5) img{filter:contrast(180%);}
+  figure:nth-child(6) img{filter:hue-rotate(120deg);}
+
+  /* On hover, remove filter smoothly */
+  figure:hover img{
+    filter:none;
+    transform:scale(1.05);
+  }
+
+  @media(max-width:600px){
+    .gallery{
+      grid-template-columns:1fr;
+    }
+    img{height:250px;}
+  }
+</style>
+</head>
+<body>
+  <h1>Responsive Image Filter Gallery</h1>
+
+  <section class="gallery">
+    <figure>
+      <img src="https://picsum.photos/id/1015/400/300" alt="Blur Effect">
+      <figcaption>Blur Filter</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1025/400/300" alt="Grayscale Effect">
+      <figcaption>Grayscale Filter</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1035/400/300" alt="Sepia Effect">
+      <figcaption>Sepia Filter</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1045/400/300" alt="Brightness Effect">
+      <figcaption>Brightness Filter</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1055/400/300" alt="Contrast Effect">
+      <figcaption>Contrast Filter</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1065/400/300" alt="Hue Rotate Effect">
+      <figcaption>Hue-Rotate Filter</figcaption>
+    </figure>
+  </section>
+</body>
+</html>
