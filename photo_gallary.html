@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Photo Gallery</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0f1724;
+    color:#fff;
+    padding:30px;
+  }
+
+  h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#7c5cff;
+  }
+
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+    gap:20px;
+  }
+
+  figure{
+    position:relative;
+    overflow:hidden;
+    border-radius:10px;
+    background:#111827;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.5s ease;
+  }
+
+  figure:hover img{
+    transform:scale(1.1);
+  }
+
+  figcaption{
+    text-align:center;
+    padding:10px;
+    font-size:0.95rem;
+    background:#111827;
+    color:#cbd5e1;
+  }
+</style>
+</head>
+<body>
+  <h1>Photo Gallery</h1>
+
+  <section class="gallery">
+    <figure>
+      <img src="https://picsum.photos/id/1015/400/300" alt="Mountain View">
+      <figcaption>Peaceful Mountains</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1025/400/300" alt="Dog Portrait">
+      <figcaption>Golden Retriever</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1035/400/300" alt="Forest Path">
+      <figcaption>Misty Forest Trail</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1045/400/300" alt="Beach">
+      <figcaption>Sunny Beach</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1055/400/300" alt="Desert">
+      <figcaption>Golden Desert Dunes</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1065/400/300" alt="City Lights">
+      <figcaption>City Skyline at Night</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1075/400/300" alt="Bridge">
+      <figcaption>Suspension Bridge</figcaption>
+    </figure>
+
+    <figure>
+      <img src="https://picsum.photos/id/1085/400/300" alt="Waterfall">
+      <figcaption>Hidden Waterfall</figcaption>
+    </figure>
+  </section>
+</body>
+</html>
