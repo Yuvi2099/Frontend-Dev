@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Selectors Practice Page</title>
+
+<style>
+  /* ---------------------- RESET ---------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ---------------------- BASE STYLES ---------------------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  header, footer {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  main {
+    width: 90%;
+    max-width: 800px;
+    background: #111827;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+  }
+
+  section {
+    margin-bottom: 25px;
+  }
+
+  section h2 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #7c5cff;
+    padding-bottom: 5px;
+  }
+
+  p, ul, a {
+    margin-bottom: 10px;
+  }
+
+  /* ---------------------- ELEMENT SELECTOR ---------------------- */
+  /* Applies to all <p> elements */
+  p {
+    color: #cbd5e1;
+    margin-left: 10px;
+  }
+
+  /* ---------------------- CLASS SELECTOR ---------------------- */
+  /* Selects elements with class="highlight" */
+  .highlight {
+    background: rgba(124, 92, 255, 0.2);
+    padding: 5px 8px;
+    border-radius: 5px;
+  }
+
+  /* ---------------------- ID SELECTOR ---------------------- */
+  /* Selects element with id="unique-box" */
+  #unique-box {
+    background: #7c5cff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* ---------------------- ATTRIBUTE SELECTOR ---------------------- */
+  /* Selects links with target="_blank" */
+  a[target="_blank"] {
+    color: #4fd1c5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a[target="_blank"]:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------------------- COMBINATOR SELECTORS ---------------------- */
+  /* Descendant selector (selects all <em> inside <div>) */
+  div em {
+    color: #facc15;
+  }
+
+  /* Child selector (>) - applies only to direct <li> children of .list-box */
+  .list-box > li {
+    color: #93c5fd;
+  }
+
+  /* Adjacent sibling (+) - styles the paragraph immediately after an <h3> */
+  h3 + p {
+    color: #a7f3d0;
+  }
+
+  /* General sibling (~) - styles all paragraphs after an <h4> in the same parent */
+  h4 ~ p {
+    color: #fda4af;
+  }
+
+  /* ---------------------- FOOTER ---------------------- */
+  footer {
+    margin-top: 30px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+    <p>This page demonstrates various CSS selector types and how they apply to HTML elements.</p>
+  </header>
+
+  <main>
+    <!-- Element Selector -->
+    <section>
+      <h2>1. Element Selector</h2>
+      <p>This is a normal paragraph styled using the <strong>element selector</strong> (applies to all &lt;p&gt; tags).</p>
+      <p>All paragraph elements share the same style, such as text color and spacing.</p>
+    </section>
+
+    <!-- Class Selector -->
+    <section>
+      <h2>2. Class Selector (.highlight)</h2>
+      <p>This text includes a <span class="highlight">highlighted phrase</span> using a class selector.</p>
+      <p>You can reuse the <span class="highlight">class</span> across multiple elements.</p>
+    </section>
+
+    <!-- ID Selector -->
+    <section>
+      <h2>3. ID Selector (#unique-box)</h2>
+      <div id="unique-box">I am styled using an ID selector — #unique-box.</div>
+    </section>
+
+    <!-- Attribute Selector -->
+    <section>
+      <h2>4. Attribute Selector (a[target="_blank"])</h2>
+      <p>Links that open in a new tab get a special color using the <strong>attribute selector</strong>:</p>
+      <a href="https://www.openai.com" target="_blank">OpenAI (new tab)</a><br>
+      <a href="https://www.example.com">Example (same tab)</a>
+    </section>
+
+    <!-- Combinator Selectors -->
+    <section>
+      <h2>5. Combinator Selectors</h2>
+      <div>
+        <p>Here we show how combinators connect different elements.</p>
+        <ul class="list-box">
+          <li>Direct child (styled via “>”)</li>
+          <li>Another direct child</li>
+        </ul>
+        <em>This text inside div is styled via descendant selector.</em>
+      </div>
+
+      <h3>Next Element Example</h3>
+      <p>This paragraph is styled with the <strong>adjacent sibling (+)</strong> selector.</p>
+
+      <h4>General Sibling Example</h4>
+      <p>All following paragraphs after this h4 are styled using the <strong>~</strong> combinator.</p>
+      <p>Another sibling paragraph with the same effect.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 CSS Selectors Practice — Created by Student
+  </footer>
+</body>
+</html>
