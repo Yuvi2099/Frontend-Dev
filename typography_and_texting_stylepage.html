@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typography and Text Styling</title>
+
+<style>
+  /* -------------------------------
+     RESET AND BASE STYLING
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #f1f5f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-shadow: 1px 2px 8px rgba(124, 92, 255, 0.5);
+  }
+
+  p.subtitle {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     ARTICLE STYLING
+  --------------------------------*/
+  article {
+    background: #111827;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 800px;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  article h2 {
+    color: #4fd1c5;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  article p {
+    margin-bottom: 16px;
+    text-align: justify;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  /* Demonstrating different font families */
+  .serif {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.05rem;
+  }
+
+  .sans-serif {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+  }
+
+  .monospace {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     INLINE TEXT STYLING
+  --------------------------------*/
+  mark {
+    background-color: #facc15;
+    color: #111;
+    padding: 2px 4px;
+    border-radius: 4px;
+  }
+
+  strong {
+    color: #7c5cff;
+  }
+
+  em {
+    color: #f472b6;
+    font-style: italic;
+  }
+
+  /* -------------------------------
+     PSEUDO-ELEMENTS
+  --------------------------------*/
+  article p::first-letter {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #7c5cff;
+    float: left;
+    margin-right: 8px;
+    line-height: 1;
+  }
+
+  article p::first-line {
+    color: #4fd1c5;
+    font-weight: 600;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 700px) {
+    article {
+      padding: 20px;
+    }
+    article p {
+      font-size: 0.95rem;
+    }
+  }
+
+  footer {
+    margin-top: 40px;
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Typography and Text Styling</h1>
+    <p class="subtitle">Exploring fonts, spacing, and text effects for beautiful readability</p>
+  </header>
+
+  <main>
+    <article>
+      <h2>The Beauty of Typography</h2>
+      <p class="serif">
+        Typography is not just about choosing fonts — it’s about creating <strong>readable, balanced,</strong> and visually appealing content.  
+        The first impression of any webpage often comes from its <em>typography choices</em>.
+      </p>
+
+      <p class="sans-serif">
+        Designers often combine multiple <mark>font families</mark> to establish hierarchy.  
+        For example, serif fonts like Georgia or Times New Roman add elegance,  
+        while sans-serif fonts like Arial or Helvetica bring a modern and clean appearance.
+      </p>
+
+      <p class="monospace">
+        Even monospace fonts have their charm — used mostly for code or technical text, they provide structure and precision.  
+        Good typography uses <strong>line-height</strong> and <em>letter-spacing</em> to make reading comfortable and easy on the eyes.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Typography Showcase — Created by Student
+  </footer>
+</body>
+</html>
