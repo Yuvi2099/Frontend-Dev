@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter Comparison Layout</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(180deg,#0f1724,#0b1b2b);
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+  }
+
+  .comparison{
+    display:flex;
+    gap:20px;
+    max-width:1000px;
+    width:100%;
+    flex-wrap:wrap;
+  }
+
+  figure{
+    flex:1 1 45%;
+    position:relative;
+    border-radius:12px;
+    overflow:hidden;
+    background:#111827;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+  }
+
+  img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:filter 0.6s ease;
+  }
+
+  figcaption{
+    text-align:center;
+    padding:10px;
+    font-size:1rem;
+    color:#cbd5e1;
+    background:#111827;
+  }
+
+  /* Apply a filter to the right (after) image */
+  figure.after img{
+    filter:brightness(60%) contrast(120%);
+  }
+
+  /* On hover, filter fades away smoothly */
+  figure.after:hover img{
+    filter:none;
+  }
+
+  /* Responsive layout: stack vertically below 700px */
+  @media(max-width:700px){
+    .comparison{
+      flex-direction:column;
+      align-items:center;
+    }
+    figure{
+      width:100%;
+    }
+    img{
+      height:250px;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="comparison">
+    <figure class="before">
+      <img src="https://picsum.photos/id/1015/800/500" alt="Original Landscape">
+      <figcaption>Before — Original Image</figcaption>
+    </figure>
+
+    <figure class="after">
+      <img src="https://picsum.photos/id/1015/800/500" alt="Filtered Landscape">
+      <figcaption>After — Brightness & Contrast Applied</figcaption>
+    </figure>
+  </section>
+</body>
+</html>
