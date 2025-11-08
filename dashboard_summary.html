@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Dashboard Summary</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(180deg,#0f1724,#0b1b2b);
+    color:#fff;
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    animation:fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .dashboard{
+    width:100%;
+    max-width:1100px;
+    display:grid;
+    grid-template-columns:250px 1fr;
+    grid-template-rows:auto 1fr;
+    grid-template-areas:
+      "header header"
+      "sidebar main";
+    gap:20px;
+    padding:20px;
+  }
+
+  header{
+    grid-area:header;
+    background:#111827;
+    border-radius:10px;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  header h1{font-size:1.3rem;color:#7c5cff;}
+  header span{color:#cbd5e1;font-size:0.9rem;}
+
+  aside{
+    grid-area:sidebar;
+    background:#111827;
+    border-radius:10px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  aside h2{
+    color:#7c5cff;
+    font-size:1.1rem;
+    margin-bottom:8px;
+  }
+
+  aside a{
+    color:#e5e7eb;
+    text-decoration:none;
+    font-weight:600;
+    transition:color 0.3s;
+  }
+
+  aside a:hover{color:#7c5cff;}
+
+  main{
+    grid-area:main;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+  }
+
+  .card{
+    background:#111827;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover{
+    transform:scale(1.05);
+    box-shadow:0 15px 40px rgba(124,92,255,0.3);
+  }
+
+  .card h3{
+    color:#7c5cff;
+    margin-bottom:10px;
+  }
+
+  .card p{
+    color:#cbd5e1;
+    font-size:0.95rem;
+    line-height:1.4;
+  }
+
+  /* Responsive layout */
+  @media(max-width:750px){
+    .dashboard{
+      grid-template-columns:1fr;
+      grid-template-areas:
+        "header"
+        "sidebar"
+        "main";
+    }
+    aside{
+      flex-direction:row;
+      justify-content:space-around;
+      flex-wrap:wrap;
+      text-align:center;
+    }
+    aside h2{width:100%;}
+  }
+</style>
+</head>
+<body>
+  <section class="dashboard">
+    <header>
+      <h1>Responsive Dashboard</h1>
+      <span>Welcome, Yuvraj</span>
+    </header>
+
+    <aside>
+      <h2>Navigation</h2>
+      <a href="#">🏠 Home</a>
+      <a href="#">🧩 Filters</a>
+      <a href="#">🔤 Typography</a>
+      <a href="#">📱 Media Queries</a>
+      <a href="#">📘 Cheat Sheet</a>
+    </aside>
+
+    <main>
+      <div class="card">
+        <h3>🎨 Filters</h3>
+        <p>Use CSS filters like <code>grayscale()</code>, <code>brightness()</code>, 
+        and <code>contrast()</code> to stylize or emphasize images dynamically.</p>
+      </div>
+
+      <div class="card">
+        <h3>🔤 Typography</h3>
+        <p>Utilize <code>clamp()</code> and relative units (em, rem, vw) to ensure 
+        text scales seamlessly across all devices.</p>
+      </div>
+
+      <div class="card">
+        <h3>📱 Media Queries</h3>
+        <p>Apply responsive breakpoints using <code>@media</code> rules to adapt 
+        layouts and components to various screen sizes.</p>
+      </div>
+
+      <div class="card">
+        <h3>📘 Cheat Sheet Links</h3>
+        <p>Access quick references for CSS Grid, Flexbox, animations, 
+        and best responsive design practices.</p>
+      </div>
+    </main>
+  </section>
+</body>
+</html>
