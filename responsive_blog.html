@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Blog Layout</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0f1724;
+    color:#fff;
+    min-height:100vh;
+    display:grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns:250px 1fr;
+    grid-template-rows:auto 1fr auto;
+    gap:20px;
+    padding:20px;
+  }
+
+  header{
+    grid-area:header;
+    background:#111827;
+    padding:15px 25px;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  header h1{font-size:1.3rem;}
+  nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:600;
+    transition:0.3s;
+  }
+  nav a:hover{color:#7c5cff;}
+
+  aside{
+    grid-area:sidebar;
+    background:#111827;
+    border-radius:10px;
+    padding:20px;
+  }
+  aside h2{font-size:1.1rem;margin-bottom:10px;}
+  ul{list-style:none;}
+  li{margin:8px 0;}
+  li a{
+    color:#9ca3af;
+    text-decoration:none;
+    transition:0.3s;
+  }
+  li a:hover{color:#fff;}
+
+  main{
+    grid-area:main;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+
+  article{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:12px;
+    padding:20px;
+    transition:transform 0.3s, box-shadow 0.3s;
+  }
+  article:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+  }
+  article h3{margin-bottom:10px;color:#7c5cff;}
+  article p{color:#cbd5e1;line-height:1.5;}
+
+  footer{
+    grid-area:footer;
+    background:#111827;
+    padding:15px;
+    text-align:center;
+    border-radius:10px;
+    color:#9ca3af;
+  }
+
+  @media(max-width:800px){
+    body{
+      grid-template-areas:
+        "header"
+        "main"
+        "sidebar"
+        "footer";
+      grid-template-columns:1fr;
+    }
+    main{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Yuvraj's Tech Blog</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <aside>
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="#">Web Development</a></li>
+      <li><a href="#">Machine Learning</a></li>
+      <li><a href="#">DevOps</a></li>
+      <li><a href="#">Cloud Computing</a></li>
+      <li><a href="#">Career Tips</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <article>
+      <h3>🚀 Getting Started with CSS Grid</h3>
+      <p>CSS Grid is a powerful layout system for creating modern, responsive web designs.
+      Learn how to use grid-template-areas, fractions, and gaps to build flexible layouts easily.</p>
+    </article>
+
+    <article>
+      <h3>⚙️ Understanding DevOps Pipelines</h3>
+      <p>DevOps pipelines automate software delivery. Discover how CI/CD tools like Jenkins,
+      Docker, and GitHub Actions streamline code integration, testing, and deployment.</p>
+    </article>
+  </main>
+
+  <footer>
+    &copy; 2025 Yuvraj's Blog — Contact: info@yuvrajblog.com
+  </footer>
+</body>
+</html>
