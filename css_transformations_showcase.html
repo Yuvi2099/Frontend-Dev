@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Transformations Showcase</title>
+
+<style>
+  /* -------------------------------
+     RESET & BASE STYLES
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+  }
+
+  h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(124, 92, 255, 0.5);
+  }
+
+  p {
+    color: #cbd5e1;
+  }
+
+  /* -------------------------------
+     FLEX CONTAINER
+  --------------------------------*/
+  .transform-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  /* -------------------------------
+     BOX BASE STYLE
+  --------------------------------*/
+  .box {
+    width: 120px;
+    height: 120px;
+    background: #111827;
+    border: 2px solid #7c5cff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+  }
+
+  /* -------------------------------
+     TRANSFORMATIONS ON HOVER
+  --------------------------------*/
+  .rotate:hover {
+    transform: rotate(45deg);
+    background: #4fd1c5;
+    border-color: #4fd1c5;
+  }
+
+  .scale:hover {
+    transform: scale(1.3);
+    background: #7c5cff;
+  }
+
+  .translate:hover {
+    transform: translateY(-20px);
+    background: #facc15;
+    color: #111;
+  }
+
+  .skew:hover {
+    transform: skew(15deg, 10deg);
+    background: #f472b6;
+  }
+
+  /* -------------------------------
+     LABELS UNDER BOXES
+  --------------------------------*/
+  .label {
+    margin-top: 10px;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* Wrapper for each transformation */
+  .transform-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 700px) {
+    .transform-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>CSS Transformations Showcase</h1>
+    <p>Hover over each box to see different transformation effects.</p>
+  </header>
+
+  <main class="transform-container">
+    <!-- Rotate -->
+    <div class="transform-item">
+      <div class="box rotate">Rotate</div>
+      <div class="label">rotate(45deg)</div>
+    </div>
+
+    <!-- Scale -->
+    <div class="transform-item">
+      <div class="box scale">Scale</div>
+      <div class="label">scale(1.3)</div>
+    </div>
+
+    <!-- Translate -->
+    <div class="transform-item">
+      <div class="box translate">Translate</div>
+      <div class="label">translateY(-20px)</div>
+    </div>
+
+    <!-- Skew -->
+    <div class="transform-item">
+      <div class="box skew">Skew</div>
+      <div class="label">skew(15deg, 10deg)</div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 CSS Transformations Demo — Created by Student
+  </footer>
+</body>
+</html>
