@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Height and Width Practice Layout</title>
+
+<style>
+  /* -------------------------------
+     RESET AND BASE STYLING
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header h1 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     CONTAINER USING FLEXBOX
+  --------------------------------*/
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  /* -------------------------------
+     BOX BASE STYLE
+  --------------------------------*/
+  .box {
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .box:hover {
+    transform: scale(1.05);
+  }
+
+  /* -------------------------------
+     DIFFERENT HEIGHT AND WIDTH UNITS
+  --------------------------------*/
+  .box1 {
+    width: 200px;           /* fixed width */
+    height: 150px;          /* fixed height */
+    background: #7c5cff;
+  }
+
+  .box2 {
+    width: 50%;             /* percentage width */
+    min-height: 20vh;       /* minimum height 20% of viewport */
+    background: #4fd1c5;
+  }
+
+  .box3 {
+    width: 25em;            /* relative width to font size */
+    max-width: 400px;       /* restrict max size */
+    height: 30vh;
+    background: #facc15;
+    color: #111;
+    overflow: auto;         /* show scroll if content exceeds box */
+  }
+
+  footer {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin-top: 20px;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 700px) {
+    main {
+      flex-direction: column;
+    }
+    .box {
+      width: 80%;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Height and Width Practice Layout</h1>
+    <p>Demonstrating px, %, vh, and em units with min-height, max-width, and overflow examples.</p>
+  </header>
+
+  <main>
+    <!-- Box with px units -->
+    <div class="box box1">
+      <p>200px × 150px</p>
+    </div>
+
+    <!-- Box with % and vh units -->
+    <div class="box box2">
+      <p>Width: 50%<br>Min-height: 20vh</p>
+    </div>
+
+    <!-- Box with em + overflow -->
+    <div class="box box3">
+      <p>
+        Width: 25em<br>
+        Max-width: 400px<br>
+        Height: 30vh<br><br>
+        This box uses <strong>overflow: auto;</strong>.<br>
+        Add more text to see scrolling behavior. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis orci nec purus ultricies lacinia.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Height & Width Practice — Created by Student
+  </footer>
+</body>
+</html>
