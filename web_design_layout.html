@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Web Design Layout</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0f1724;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* HEADER */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:#111827;
+  }
+  .logo{
+    font-size:1.3rem;
+    font-weight:700;
+    color:#7c5cff;
+  }
+  nav a{
+    color:#e5e7eb;
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:600;
+    transition:color 0.3s;
+  }
+  nav a:hover{color:#7c5cff;}
+
+  /* MAIN AREA */
+  main{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    padding:40px 20px;
+    flex-wrap:wrap;
+  }
+
+  .box{
+    background:#111827;
+    border-radius:12px;
+    padding:25px;
+    width:300px;
+    min-height:160px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
+  }
+
+  .box:hover{
+    transform:scale(1.05);
+    box-shadow:0 10px 30px rgba(124,92,255,0.3);
+  }
+
+  .box h2{color:#7c5cff;margin-bottom:10px;}
+  .box p{color:#cbd5e1;font-size:0.95rem;line-height:1.5;}
+
+  /* FOOTER */
+  footer{
+    text-align:center;
+    padding:15px;
+    background:#111827;
+    font-size:0.9rem;
+    color:#9ca3af;
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media(max-width:750px){
+    main{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">MyBrand</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="box">
+      <h2>Fast Performance</h2>
+      <p>Optimized design ensures quick loading and smooth user experience on any device.</p>
+    </div>
+
+    <div class="box">
+      <h2>Modern UI</h2>
+      <p>Clean and responsive layouts built using modern web standards and Flexbox.</p>
+    </div>
+
+    <div class="box">
+      <h2>Easy Customization</h2>
+      <p>Flexible code structure for easy styling, theming, and content updates.</p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 MyBrand — All rights reserved.
+  </footer>
+</body>
+</html>
