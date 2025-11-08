@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shadows and Depth Effect Layout</title>
+
+<style>
+  /* -------------------------------
+     RESET AND BASE STYLING
+  --------------------------------*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #0f1724, #0b1b2b);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  h1 {
+    color: #7c5cff;
+    text-shadow: 2px 3px 8px rgba(124, 92, 255, 0.6);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------------
+     CARD CONTAINER USING FLEXBOX
+  --------------------------------*/
+  .card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+  }
+
+  /* -------------------------------
+     CARD BASE STYLING
+  --------------------------------*/
+  .card {
+    background: #111827;
+    border-radius: 12px;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    color: #e5e7eb;
+    transition: all 0.3s ease;
+  }
+
+  .card h2 {
+    color: #7c5cff;
+    margin-bottom: 10px;
+    text-shadow: 1px 2px 6px rgba(124, 92, 255, 0.5);
+  }
+
+  .card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+  }
+
+  /* -------------------------------
+     DIFFERENT SHADOW STYLES
+  --------------------------------*/
+  .shadow-soft {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  .shadow-medium {
+    box-shadow: 0 8px 25px rgba(79, 209, 197, 0.4);
+  }
+
+  .shadow-strong {
+    box-shadow: 0 10px 35px rgba(124, 92, 255, 0.6);
+  }
+
+  /* -------------------------------
+     HOVER EFFECT (LIFT-UP)
+  --------------------------------*/
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(124, 92, 255, 0.6);
+  }
+
+  footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+
+  /* -------------------------------
+     RESPONSIVE DESIGN
+  --------------------------------*/
+  @media (max-width: 800px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <h1>Shadows and Depth Effect Layout</h1>
+    <p>Hover over each card to see the lift and shadow animation.</p>
+  </header>
+
+  <main class="card-container">
+    <!-- Card 1 -->
+    <section class="card shadow-soft">
+      <h2>Soft Shadow</h2>
+      <p>
+        A subtle box-shadow gives this card a gentle depth, creating a soft, natural look.
+      </p>
+    </section>
+
+    <!-- Card 2 -->
+    <section class="card shadow-medium">
+      <h2>Medium Shadow</h2>
+      <p>
+        A more prominent shadow creates a noticeable depth, useful for emphasis and focus.
+      </p>
+    </section>
+
+    <!-- Card 3 -->
+    <section class="card shadow-strong">
+      <h2>Strong Shadow</h2>
+      <p>
+        A deep and vibrant shadow adds contrast, making the element appear elevated and bold.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Shadows & Depth Demo — Created by Student
+  </footer>
+</body>
+</html>
