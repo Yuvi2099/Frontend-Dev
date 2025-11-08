@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mini UI — Compact Layout</title>
+<style>
+  /* ==========================
+     Global reset & box-sizing
+     ========================== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html,body{ height:100%; }
+  body{
+    margin:0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#071023,#081726);
+    color:#e6eef8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+  }
+
+  /* ================
+     Page structure
+     ================ */
+  .page {
+    width:100%;
+    max-width:980px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+    border-radius:12px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  }
+  header h1{ font-size:1.05rem; letter-spacing:0.2px; margin:0; color:#cfe0ff; }
+  header nav{ display:flex; gap:12px; align-items:center; }
+  header a{
+    color:rgba(255,255,255,0.85);
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:8px;
+    transition:transform .16s ease, background .16s;
+    font-weight:600;
+    background:transparent;
+  }
+  header a:hover{ transform:translateY(-3px); background: rgba(255,255,255,0.02); }
+
+  /* ======================
+     Main card (central UI)
+     ====================== */
+  main.card{
+    display:flex;
+    gap:22px;
+    padding:22px;
+    border-radius:14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 18px 40px rgba(2,6,23,0.65);
+    align-items:flex-start;
+  }
+
+  /* left column: form */
+  .panel {
+    flex:1 1 420px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .panel h2{ margin:0; color:#dbe9ff; font-size:1.15rem; }
+  .panel p.lead{ margin:0; color:rgba(255,255,255,0.75); font-size:0.95rem; }
+
+  /* form layout */
+  form { display:flex; flex-direction:column; gap:12px; margin-top:6px; }
+  .row { display:flex; gap:12px; }
+  .row .field { flex:1; }
+
+  label { display:block; font-size:0.86rem; color:rgba(255,255,255,0.75); margin-bottom:6px; }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width:100%;
+    padding:10px 12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    background: rgba(255,255,255,0.02);
+    color: #e6eef8;
+    outline:none;
+    transition: box-shadow .18s ease, transform .12s ease, border-color .18s;
+  }
+
+  /* focus styles for accessibility */
+  input:focus, select:focus, textarea:focus {
+    box-shadow: 0 6px 20px rgba(124,92,255,0.14);
+    border-color: rgba(124,92,255,0.9);
+    transform: translateY(-1px);
+  }
+
+  textarea { min-height:86px; resize:vertical; }
+
+  /* checkbox row */
+  .options { display:flex; gap:12px; align-items:center; flex-wrap:wrap; color:rgba(255,255,255,0.85); }
+  .options label{ display:flex; gap:8px; align-items:center; cursor:pointer; user-select:none; }
+  input[type="checkbox"]{
+    width:16px;height:16px;border-radius:4px;border:1px solid rgba(255,255,255,0.08);
+    appearance:none;background:rgba(255,255,255,0.02);display:inline-grid;place-items:center;cursor:pointer;
+    transition:background .15s, transform .12s;
+  }
+  input[type="checkbox"]:checked{ background:linear-gradient(90deg,#7c5cff,#4fd1c5); transform:scale(.96); }
+  input[type="checkbox"]:focus{ box-shadow:0 6px 18px rgba(124,92,255,0.12); }
+
+  /* buttons */
+  .actions { display:flex; gap:12px; margin-top:6px; flex-wrap:wrap; }
+  .btn {
+    padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer;
+    transition:transform .12s ease, box-shadow .18s ease, opacity .12s;
+    box-shadow: 0 8px 22px rgba(2,6,23,0.5);
+  }
+  .btn-primary { background: linear-gradient(90deg,#7c5cff,#4fd1c5); color:#051024; }
+  .btn-primary:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(124,92,255,0.18); }
+  .btn-secondary { background:transparent; color:#cfe0ff; border:1px solid rgba(255,255,255,0.06); }
+  .btn-secondary:hover { background:rgba(255,255,255,0.02); transform:translateY(-3px); }
+  .btn[disabled], .btn.disabled { opacity:.55; cursor:not-allowed; transform:none; box-shadow:none; }
+
+  /* right column: image / meta */
+  .aside {
+    width:220px; flex:0 0 220px; display:flex; flex-direction:column; gap:12px; align-items:center;
+  }
+  .thumb {
+    width:100%; border-radius:10px; overflow:hidden; background:#0e1720; border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 12px 32px rgba(2,6,23,0.6);
+  }
+  .thumb img{ display:block; width:100%; height:140px; object-fit:cover; transition:transform .3s ease; }
+  .thumb:hover img{ transform:scale(1.04); }
+
+  .meta { width:100%; text-align:center; color:rgba(255,255,255,0.85); font-size:0.95rem; }
+  .meta small { display:block; color:rgba(255,255,255,0.6); margin-top:6px; font-size:0.85rem; }
+
+  /* =========================
+     Footer (full-width card)
+     ========================= */
+  footer {
+    padding:12px 16px;
+    border-radius:10px;
+    text-align:center;
+    color:rgba(255,255,255,0.7);
+    background: transparent;
+  }
+
+  /* =========================
+     Responsive: stack on small
+     ========================= */
+  @media (max-width:780px){
+    main.card { flex-direction:column; align-items:stretch; }
+    .aside { width:100%; flex:0 0 auto; order:2; }
+    .thumb img { height:180px; }
+  }
+
+  @media (max-width:420px){
+    header{ flex-direction:column; gap:8px; align-items:flex-start; padding:12px; }
+    .page { padding:0; }
+  }
+
+  /* small helper for labels inside narrow rows */
+  .muted { color: rgba(255,255,255,0.72); font-size:0.92rem; }
+</style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <h1>Mini UI</h1>
+      <nav aria-label="Primary">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#">Profile</a>
+        <a href="#">Help</a>
+      </nav>
+    </header>
+
+    <main class="card" role="main" aria-labelledby="card-title">
+      <section class="panel">
+        <h2 id="card-title">Quick Settings</h2>
+        <p class="lead">Update your profile details and preferences. All inputs demonstrate focus and hover states.</p>
+
+        <form action="#" method="post" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="Alex Morgan" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="role">Role</label>
+              <select id="role" name="role">
+                <option>Developer</option>
+                <option>Designer</option>
+                <option>Product</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="plan">Plan</label>
+              <select id="plan" name="plan">
+                <option>Free</option>
+                <option>Pro</option>
+                <option>Team</option>
+              </select>
+            </div>
