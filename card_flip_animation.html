@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card Flip Animation</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,#0f1724,#0b1b2b);
+    font-family:Arial,Helvetica,sans-serif;
+  }
+
+  .card{
+    width:260px;
+    height:360px;
+    perspective:1000px; /* Creates 3D space */
+  }
+
+  .inner{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style:preserve-3d;
+    transition:transform 0.8s ease;
+  }
+
+  .card:hover .inner{
+    transform:rotateY(180deg);
+  }
+
+  .front, .back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:12px;
+    backface-visibility:hidden;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .front{
+    background:#111827;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+  }
+
+  .front img{
+    width:80%;
+    border-radius:10px;
+    margin-bottom:15px;
+  }
+
+  .front h2{
+    color:#7c5cff;
+    font-size:1.2rem;
+  }
+
+  .back{
+    background:#1f2937;
+    color:#e5e7eb;
+    transform:rotateY(180deg);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    text-align:center;
+    line-height:1.5;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="inner">
+      <div class="front">
+        <img src="https://picsum.photos/200/150" alt="Card Image">
+        <h2>Beautiful Sunset</h2>
+      </div>
+      <div class="back">
+        <p>
+          Experience the tranquility of nature’s beauty.
+          This scene captures a perfect sunset moment,
+          blending warm colors and peaceful horizons.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
