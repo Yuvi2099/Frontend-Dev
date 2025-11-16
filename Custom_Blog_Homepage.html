@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tech Blog</title>
+
+  <!-- Google Font: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+
+  <!-- Custom Theme Overrides -->
+  <style>
+    :root {
+      /* Custom primary theme color (purple/indigo mix) */
+      --bs-primary: #6c4ce8;
+      --bs-primary-rgb: 108, 76, 232;
+
+      /* Use Google Font as Bootstrap's default sans-serif */
+      --bs-font-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    body {
+      font-family: var(--bs-font-sans-serif);
+      background-color: #f5f5ff;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6c4ce8, #a374ff);
+    }
+
+    .blog-subtitle {
+      max-width: 620px;
+    }
+
+    .blog-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="py-4 mb-5 text-white">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between">
+        <div>
+          <h1 class="fw-bold mb-1">Yuvraj's Tech Journal</h1>
+          <p class="lead mb-0 blog-subtitle">
+            Thoughts on programming, dev tools, and life as a learner.
+          </p>
+        </div>
+        <div class="mt-3 mt-md-0">
+          <a href="#posts" class="btn btn-light btn-sm me-2">Latest Posts</a>
+          <a href="#about" class="btn btn-outline-light btn-sm">About Me</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mb-5" id="posts">
+    <div class="row g-4">
+      <!-- Blog Post 1 -->
+      <div class="col-12 col-md-6">
+        <article class="card blog-card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Programming</span>
+            <h2 class="h4 card-title text-primary fw-bold">
+              Getting Started with Bootstrap for Clean Layouts
+            </h2>
+            <p class="card-text text-muted">
+              In this post, I share how I built my first responsive pages using Bootstrap's grid,
+              utilities, and components without writing much custom CSS.
+            </p>
+            <p class="small text-muted mb-2">Published on Nov 15, 2025 • 5 min read</p>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Blog Post 2 -->
+      <div class="col-12 col-md-6">
+        <article class="card blog-card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Dev Journey</span>
+            <h2 class="h4 card-title text-primary fw-bold">
+              Balancing College, DSA, and DevOps Learning
+            </h2>
+            <p class="card-text text-muted">
+              How I plan my time between lectures, coding practice, online courses, and
+              small projects to keep improving consistently.
+            </p>
+            <p class="small text-muted mb-2">Published on Nov 10, 2025 • 7 min read</p>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- Simple About Section -->
+    <section class="mt-5" id="about">
+      <h3 class="text-primary fw-bold mb-3">About This Blog</h3>
+      <p class="text-muted">
+        This blog is my personal space to document what I’m learning in software development,
+        DevOps, and cybersecurity. I share notes, mini-tutorials, and honest reflections on the journey.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top bg-white">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <p class="mb-2 mb-md-0 small text-muted">
+        &copy; 2025 Yuvraj's Tech Journal. All rights reserved.
+      </p>
+      <p class="mb-0 small text-muted">
+        Built with <span class="text-primary fw-semibold">Bootstrap</span> &amp; a custom theme.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
