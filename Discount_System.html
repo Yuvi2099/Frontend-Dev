@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progressive Discount System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f7fb;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #009688;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #00796b;
+    }
+
+    .result {
+      background: #f1f5f8;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Discount Calculator</h1>
+
+    <div class="form-group">
+      <label for="total">Total Purchase Amount (₹):</label>
+      <input type="number" id="total" placeholder="Enter purchase amount">
+    </div>
+
+    <button onclick="calculateDiscount()">Apply Discount</button>
+
+    <div id="output" class="result">Enter the purchase amount to calculate discount.</div>
+  </div>
+
+  <script src="Discount_System.js"></script>
+</body>
+</html>
