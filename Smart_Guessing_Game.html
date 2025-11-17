@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Guessing Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e9f5ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .game-container {
+      background: #fff;
+      padding: 25px;
+      width: 350px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .game-container h1 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      border-radius: 5px;
+      border: 1px solid #bbb;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #1e88e5;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1565c0;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Smart Guessing Game</h1>
+    <p>Guess a number between 1 and 50</p>
+    <input type="number" id="guess" placeholder="Enter your guess" />
+    <button onclick="playGuessingGame()">Submit Guess</button>
+    <div id="result">Make a guess to begin!</div>
+  </div>
+
+  <script src="Smart_Guessing_Game.js"></script>
+</body>
+</html>
+
