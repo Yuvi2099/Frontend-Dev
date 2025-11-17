@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Activity Planner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .container {
+      width: 400px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .entry {
+      margin-bottom: 15px;
+    }
+
+    .entry label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .entry input,
+    .entry select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #2a9d8f;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1c6b61;
+    }
+
+    .result {
+      background: #f0f4f7;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Weather Activity Planner</h1>
+
+    <div class="entry">
+      <label for="temperature">Temperature (°C):</label>
+      <input type="number" id="temperature" placeholder="Enter temperature">
+    </div>
+
+    <div class="entry">
+      <label for="isRaining">Is it raining?</label>
+      <select id="isRaining">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+
+    <div class="entry">
+      <label for="windSpeed">Wind Speed (km/h):</label>
+      <input type="number" id="windSpeed" placeholder="Enter wind speed">
+    </div>
+
+    <button onclick="planActivity()">Suggest Activity</button>
+
+    <div id="output" class="result">Enter details to get suggestions!</div>
+  </div>
+
+  <script src="Weather.js"></script>
+</body>
+</html>
