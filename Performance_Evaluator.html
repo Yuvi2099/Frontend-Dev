@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Performance Evaluator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f7fa;
+      display: flex;
+      justify-content: center;
+      padding-top: 50px;
+    }
+
+    .container {
+      width: 400px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .entry {
+      margin-bottom: 15px;
+    }
+
+    .entry label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .entry input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      background: #f0f4f7;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Academic Performance Evaluator</h1>
+
+    <div class="entry">
+      <label for="subject1">Subject 1 Marks:</label>
+      <input type="number" id="subject1" placeholder="Enter marks out of 100">
+    </div>
+
+    <div class="entry">
+      <label for="subject2">Subject 2 Marks:</label>
+      <input type="number" id="subject2" placeholder="Enter marks out of 100">
+    </div>
+
+    <div class="entry">
+      <label for="subject3">Subject 3 Marks:</label>
+      <input type="number" id="subject3" placeholder="Enter marks out of 100">
+    </div>
+
+    <div class="entry">
+      <label for="subject4">Subject 4 Marks:</label>
+      <input type="number" id="subject4" placeholder="Enter marks out of 100">
+    </div>
+
+    <div class="entry">
+      <label for="subject5">Subject 5 Marks:</label>
+      <input type="number" id="subject5" placeholder="Enter marks out of 100">
+    </div>
+
+    <button onclick="evaluatePerformance()">Evaluate</button>
+
+    <div id="output" class="result">Enter marks to see result.</div>
+  </div>
+
+  <script src="Performance_Evaluator.js"></script>
+</body>
+</html>
