@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Dynamic_Blog.js" defer></script>
+  <style>
+    .post {
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .highlight-post {
+      background-color: #dff9fb;
+    }
+    .tag {
+      font-size: 0.8rem;
+      color: #636e72;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Admin Panel</h1>
+  </header>
+  <main>
+    <section>
+      <button id="add-post-btn">Add New Post</button>
+      <button id="prepend-post-btn">Prepend Featured Post</button>
+      <button id="remove-last-post-btn">Remove Last Post</button>
+      <input type="text" id="keyword-input" placeholder="Keyword to highlight">
+      <button id="highlight-keyword-btn">Highlight Posts</button>
+    </section>
+    <section id="posts-container">
+      <article class="post">
+        <h2>Welcome to the blog</h2>
+        <p>This is the first post with introduction.</p>
+      </article>
+      <article class="post">
+        <h2>JavaScript Tips</h2>
+        <p>Useful tips for front-end developers.</p>
+      </article>
+      <article class="post">
+        <h2>CSS Tricks</h2>
+        <p>Layout and design patterns.</p>
+      </article>
+      <article class="post">
+        <h2>Backend Basics</h2>
+        <p>Understanding APIs and databases.</p>
+      </article>
+      <article class="post">
+        <h2>Deployment Guide</h2>
+        <p>Steps for deploying applications.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
