@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Offer_Banner.js" defer></script>
+  <style>
+    .banner-container {
+      margin-bottom: 1rem;
+    }
+    .banner {
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      background-color: #ffeaa7;
+    }
+    .controls button {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Special Offers</h1>
+  </header>
+  <main>
+    <section class="controls">
+      <button id="hide-banners">Hide Banners</button>
+      <button id="show-banners">Show Banners</button>
+      <button id="slide-toggle-banners">Slide Up/Down</button>
+      <button id="fade-toggle-banners">Fade In/Fade Out</button>
+    </section>
+    <section class="banner-container">
+      <article class="banner">Offer 1: 20% off on all electronics</article>
+      <article class="banner">Offer 2: Buy 1 Get 1 Free on shoes</article>
+      <article class="banner">Offer 3: 50% off on selected items</article>
+      <article class="banner">Offer 4: Free shipping on orders above $100</article>
+      <article class="banner">Offer 5: Extra 10% off for members</article>
+    </section>
+  </main>
+</body>
+</html>
