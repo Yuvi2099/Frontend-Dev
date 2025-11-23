@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Form_Validation.js" defer></script>
+  <style>
+    .error-border {
+      border: 1px solid red;
+    }
+    .success-message {
+      color: green;
+      font-weight: bold;
+    }
+    .error-message {
+      color: red;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Registration Form</h1>
+  </header>
+  <main>
+    <section>
+      <form id="registration-form">
+        <div>
+          <label for="name-input">Name</label>
+          <input type="text" id="name-input">
+        </div>
+        <div>
+          <label for="email-input">Email</label>
+          <input type="text" id="email-input">
+        </div>
+        <div>
+          <label for="password-input">Password</label>
+          <input type="password" id="password-input">
+        </div>
+        <button type="submit" id="submit-btn">Register</button>
+      </form>
+      <p id="form-message"></p>
+    </section>
+  </main>
+</body>
+</html>
