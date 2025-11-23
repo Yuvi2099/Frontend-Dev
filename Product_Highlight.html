@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2 Product Highlight</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Product_Highlight.js" defer></script>
+  <style>
+    .product-list {
+      display: flex;
+      gap: 1rem;
+    }
+    .product {
+      border: 1px solid #ccc;
+      padding: 0.75rem;
+      width: 160px;
+      position: relative;
+      cursor: pointer;
+    }
+    .product-details {
+      display: none;
+      font-size: 0.85rem;
+    }
+    .highlight-product {
+      background-color: #ffeaa7;
+    }
+    .favorite-icon {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      cursor: pointer;
+    }
+    .favorite-icon.selected {
+      color: red;
+    }
+    .discounted {
+      border-color: green;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Product Highlight</h1>
+  </header>
+  <main>
+    <section class="product-list">
+      <article class="product" data-stock="in">
+        <span class="favorite-icon">★</span>
+        <h2>Phone A</h2>
+        <p class="price" data-discount="true">$299</p>
+        <p class="product-details">Great battery life and camera.</p>
+      </article>
+      <article class="product" data-stock="out">
+        <span class="favorite-icon">★</span>
+        <h2>Phone B</h2>
+        <p class="price" data-discount="false">$399</p>
+        <p class="product-details">High performance but currently unavailable.</p>
+      </article>
+      <article class="product" data-stock="in">
+        <span class="favorite-icon">★</span>
+        <h2>Laptop C</h2>
+        <p class="price" data-discount="true">$799</p>
+        <p class="product-details">Lightweight laptop with SSD.</p>
+      </article>
+      <article class="product" data-stock="in">
+        <span class="favorite-icon">★</span>
+        <h2>Headphones D</h2>
+        <p class="price" data-discount="false">$99</p>
+        <p class="product-details">Noise cancelling headphones.</p>
+      </article>
+      <article class="product" data-stock="out">
+        <span class="favorite-icon">★</span>
+        <h2>Watch E</h2>
+        <p class="price" data-discount="true">$149</p>
+        <p class="product-details">Smartwatch with health tracking.</p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
