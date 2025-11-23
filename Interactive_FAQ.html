@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Interactive_FAQ.js" defer></script>
+  <style>
+    .question {
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+    .answer {
+      display: none;
+      padding: 0.5rem 1rem;
+    }
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .question-input {
+      width: 90%;
+      padding: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FAQ Section</h1>
+  </header>
+  <main>
+    <section id="faq-list">
+      <article class="faq-item">
+        <h2 class="question">What is your return policy?</h2>
+        <div class="answer">
+          <p>We offer a 30-day return policy for unused products.</p>
+          <input type="text" class="question-input" placeholder="Type follow-up question">
+        </div>
+      </article>
+      <article class="faq-item">
+        <h2 class="question">How long is shipping?</h2>
+        <div class="answer">
+          <p>Shipping usually takes 3-5 business days.</p>
+          <input type="text" class="question-input" placeholder="Type follow-up question">
+        </div>
+      </article>
+      <article class="faq-item">
+        <h2 class="question">Do you ship internationally?</h2>
+        <div class="answer">
+          <p>Yes, we ship to selected countries.</p>
+          <input type="text" class="question-input" placeholder="Type follow-up question">
+        </div>
+      </article>
+      <article class="faq-item">
+        <h2 class="question">How can I contact support?</h2>
+        <div class="answer">
+          <p>You can contact us via email or chat.</p>
+          <input type="text" class="question-input" placeholder="Type follow-up question">
+        </div>
+      </article>
+      <article class="faq-item">
+        <h2 class="question">Do you offer discounts?</h2>
+        <div class="answer">
+          <p>We offer discounts during special events.</p>
+          <input type="text" class="question-input" placeholder="Type follow-up question">
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
