@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Team_Member_Directory.js" defer></script>
+  <style>
+    .department {
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+    }
+    .manager {
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .employee {
+      margin-left: 1rem;
+      cursor: pointer;
+    }
+    .contact-info {
+      display: none;
+      font-size: 0.85rem;
+      margin-left: 2rem;
+    }
+    .highlight {
+      background-color: #ffeaa7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Team Directory</h1>
+  </header>
+  <main>
+    <section id="departments">
+      <section class="department" data-dept="engineering">
+        <h2 class="department-title">Engineering Department</h2>
+        <div class="manager" data-manager="m1">Manager: Alice</div>
+        <div class="employee" data-manager="m1">Bob<span class="contact-info"> - bob@example.com</span></div>
+        <div class="employee" data-manager="m1">Carol<span class="contact-info"> - carol@example.com</span></div>
+        <div class="employee" data-manager="m1">David<span class="contact-info"> - david@example.com</span></div>
+      </section>
+
+      <section class="department" data-dept="design">
+        <h2 class="department-title">Design Department</h2>
+        <div class="manager" data-manager="m2">Manager: Emma</div>
+        <div class="employee" data-manager="m2">Faith<span class="contact-info"> - faith@example.com</span></div>
+        <div class="employee" data-manager="m2">George<span class="contact-info"> - george@example.com</span></div>
+        <div class="employee" data-manager="m2">Hannah<span class="contact-info"> - hannah@example.com</span></div>
+      </section>
+    </section>
+    <section>
+      <button id="random-employee-btn">Highlight Random Employee Siblings</button>
+      <button id="toggle-teams-btn">Collapse/Expand All Teams</button>
+    </section>
+  </main>
+</body>
+</html>
