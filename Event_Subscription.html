@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="Event_Subscription.js" defer></script>
+  <style>
+    .topic {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid #ccc;
+      margin: 0.25rem 0;
+      cursor: pointer;
+    }
+    .active-topic {
+      background-color: #dff9fb;
+    }
+    #status-message {
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Subscription Panel</h1>
+  </header>
+  <main>
+    <section>
+      <button id="subscribe-btn">Subscribe</button>
+      <button id="unsubscribe-btn">Unsubscribe</button>
+    </section>
+    <section>
+      <h2>Topics</h2>
+      <div id="topics-list">
+        <div class="topic" data-name="News">News</div>
+        <div class="topic" data-name="Sports">Sports</div>
+        <div class="topic" data-name="Technology">Technology</div>
+        <div class="topic" data-name="Entertainment">Entertainment</div>
+        <div class="topic" data-name="Health">Health</div>
+      </div>
+      <input type="text" id="new-topic-input" placeholder="New topic name">
+      <button id="add-topic-btn">Add Topic</button>
+      <button id="remove-sports-click">Disable Sports Click</button>
+      <div id="status-message"></div>
+    </section>
+  </main>
+</body>
+</html>
